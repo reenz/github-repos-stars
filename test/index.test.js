@@ -14,5 +14,14 @@ describe("Index page", () => {
       done();
     });
   });
+
+  it("should respond with title", (done) => {
+    chai.request(app)
+    .get("/")
+    .end((err, res) => {
+      res.text.should.contain("Compute Stars");
+      done();
+    });
+  });
 });
 
