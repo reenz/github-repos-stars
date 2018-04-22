@@ -1,5 +1,7 @@
 # Stars in GitHub Public Repositories 
 
+[![Build Status](https://travis-ci.org/reenz/github-repos-stars.svg?branch=master)](https://travis-ci.org/reenz/github-repos-stars)
+
 This app will find out how many stars a GitHub user has across all their public repositories. 
 
 I will use:
