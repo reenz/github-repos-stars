@@ -16,7 +16,7 @@ For API testing I will use chakram which needs bit more research. I have used as
 
 ### How to use it?
 
-#### To run in locally
+#### To run locally
 
 * `git clone git@github.com:reenz/github-repos-stars.git`
 * `npm install` to download the dependencies
