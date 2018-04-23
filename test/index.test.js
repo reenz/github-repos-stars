@@ -23,5 +23,15 @@ describe("Index page", () => {
       done();
     });
   });
+  it("should respond with status 200 when user enters the github user and repo", (done) => {
+    const user = "makersacademy";
+    const repo = "/bowling-challenge" ;
+    chai.request(app)
+    .get(`/${user}${repo}`)
+    .end((err, res) => {
+      should.not.exist(err);
+      res.status.should.equal(200);
+      done();
+    });
+  });
 });
-
