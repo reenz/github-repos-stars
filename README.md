@@ -10,12 +10,12 @@ I will use:
 * `NodeJs` to handle the HTTP requests and compute the total stars
 * `redis` as a caching layer to speed things up!
 
-### Progress
+### Current Status of the App
 
-Currently this app can retrieve stars for one particular repository by providing user name and repository name.
-Next step is to research about redis-async as I am using `async` and `await` for asynchronous request and redis-async will allow me to use async and await for making request to redis client.
-For API testing I will use chakram which needs bit more research. I have used async and await for the first time so was not sure how to first write the test and then implement the code to pass them.
-To test the GitHub api response I need to mock the response so that my test don't rely on actual GitHub api. Nock looks good option for that it is an HTTP mocking and expectations library for Node.js.
+* Currently this app can retrieve stars for one particular repository by providing user name and repository name.
+* For API testing I used Nock so that I can mock the GitHub api response and my tests don't rely on actual GitHub api. I have used async and await for the first time so was not sure how to first write the test and then implement the code to pass them.
+* Next step is to research about redis-async as I am using `async` and `await` for asynchronous request and redis-async will allow me to use async and await for making request to redis client.
+
 
 ### How to use it?
 
