@@ -3,6 +3,7 @@ const chaiHttp = require("chai-http");
 const should = chai.should();
 chai.use(chaiHttp);
 const app = require("../app")
+const nock = require("nock");
 
 describe("Index page", () => {
   it("should respond with status 200", (done) => {
@@ -23,9 +24,13 @@ describe("Index page", () => {
       done();
     });
   });
+
   it("should respond with status 200 when user enters the github user and repo", (done) => {
-    const user = "makersacademy";
-    const repo = "/bowling-challenge" ;
+    const user = "user";
+    const repo = "/testRepo" ;
+    nock("https://api.github.com/repos")
+    .get(`/${user}${repo}`)
+    .reply(200)
     chai.request(app)
     .get(`/${user}${repo}`)
     .end((err, res) => {
