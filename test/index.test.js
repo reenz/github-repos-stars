@@ -24,13 +24,18 @@ describe("Index page", () => {
       done();
     });
   });
+});
 
-  it("should respond with status 200 when user enters the github user and repo", (done) => {
-    const user = "user";
-    const repo = "/testRepo" ;
+describe("Mocking the GitHub response",() => {
+  const user = "user";
+  const repo = "/testRepo" ;
+  beforeEach(() => {
     nock("https://api.github.com/repos")
     .get(`/${user}${repo}`)
-    .reply(200)
+    .reply(200,{"stargazers_count": 100})
+  })
+  
+  it("should respond with status 200 when user enters the github user and repo", (done) => {
     chai.request(app)
     .get(`/${user}${repo}`)
     .end((err, res) => {
@@ -39,4 +44,13 @@ describe("Index page", () => {
       done();
     });
   });
-});
+
+  it("should return the number of stars for given user and repo", (done) => {
+    chai.request(app)
+    .get(`/${user}${repo}`)
+    .end((err, res) => {
+      (JSON.stringify(res.body)).should.equal(JSON.stringify({user: 'user', repo: 'testRepo', stars: 100}))
+      done();
+    })
+  })
+})
