@@ -7,7 +7,7 @@ This app will find out how many stars a GitHub user has across all their public 
 I will use:
 
 * `GitHub API` to get information about user and repository
-* `NodeJs` to handle the HTTP requests and compute the total stars
+* `NodeJs` to handle the HTTP requests and retrieve the number of stars from given repository
 * `redis` as a caching layer to speed things up!
 
 ### Current Status of the App
