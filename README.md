@@ -17,7 +17,7 @@ I will use:
 * Next step is to research about redis-async as I am using `async` and `await` for asynchronous request and redis-async will allow me to use async and await for making request to redis client.
 
 
-### How to use it?
+### How to use
 
 #### To run locally
 
